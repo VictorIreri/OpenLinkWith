@@ -1,32 +1,33 @@
 apply plugin: 'com.android.application'
 apply from: configFile('android-common-config.gradle')
-apply plugin: 'com.novoda.build-properties'
+//apply plugin: 'com.novoda.build-properties'
 
-buildProperties {
-  signing.using(configFile('release.signing')) | configFile('debug.signing')
-}
+//buildProperties {
+//  signing.using(configFile('release.signing')) | configFile('debug.signing')
+//}
 
 def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 
 android {
+  namespace = 'com.tasomaniac.openwith'
   defaultConfig {
     applicationId 'com.tasomaniac.openwith'
     versionCode versions.versionCode
     versionName versions.versionName
-    buildConfigString 'GIT_SHA', gitSha
+//    buildConfigString 'GIT_SHA', gitSha
 
     resConfigs 'ar', 'de', 'en', 'es', 'fi', 'fr', 'hi', 'hr', 'in', 'it', 'iw', 'ja', 'ko', 'nl', 'pl', 'pt-rBR', 'pt-rPT', 'ru', 'sv', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW'
   }
 
   signingConfigs {
     debug.storeFile configFile('debug.keystore')
-    release {
-      def signing = buildProperties.signing
-      storeFile configFile(signing['storeFile'].string)
-      storePassword signing['storePassword'].string
-      keyAlias signing['keyAlias'].string
-      keyPassword signing['keyPassword'].string
-    }
+//    release {
+//      def signing = buildProperties.signing
+//      storeFile configFile(signing['storeFile'].string)
+//      storePassword signing['storePassword'].string
+//      keyAlias signing['keyAlias'].string
+//      keyPassword signing['keyPassword'].string
+//    }
   }
 
   buildTypes {
@@ -37,12 +38,12 @@ android {
       signingConfig signingConfigs.debug
     }
 
-    release {
-      minifyEnabled true
-      shrinkResources true
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-      signingConfig signingConfigs.release
-    }
+//    release {
+//      minifyEnabled true
+//      shrinkResources true
+//      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//      signingConfig signingConfigs.release
+//    }
   }
 
   flavorDimensions 'store'

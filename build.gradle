@@ -18,7 +18,7 @@ buildscript {
 
             dagger     : '2.40.5',
             lifecycle  : '2.4.0',
-            kotlin     : '1.4.32',
+            kotlin     : '1.6.20',
             ktlint     : '0.39.0',
             okHttp     : '4.8.0',
             room       : '2.4.0',
@@ -31,13 +31,13 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.4.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.40.0'
-        classpath 'com.novoda:gradle-build-properties-plugin:0.4.1'
-        classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.14.1'
-        classpath 'org.jlleitschuh.gradle:ktlint-gradle:9.4.1'
-        classpath 'com.gradleup:static-analysis-plugin:1.3'
+//        classpath 'com.github.ben-manes:gradle-versions-plugin:0.40.0'
+//        classpath 'com.novoda:gradle-build-properties-plugin:0.4.1'
+//        classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.14.1'
+//        classpath 'org.jlleitschuh.gradle:ktlint-gradle:9.4.1'
+//        classpath 'com.gradleup:static-analysis-plugin:1.3'
         classpath 'com.gradleup:auto-manifest-plugin:1.0.4'
         if (isPlay) {
             classpath 'com.google.gms:google-services:4.3.10'
@@ -59,10 +59,10 @@ allprojects {
         mavenCentral()
     }
 
-    if (project.name != 'test-support' && project.name != 'base-translations') {
-        apply from: configFile('static-analysis.gradle')
-    }
+//    if (project.name != 'test-support' && project.name != 'base-translations') {
+//        apply from: configFile('static-analysis.gradle')
+//    }
 }
 
-apply from: configFile('configure-not-wanted-repositories.gradle')
-apply from: configFile('configure-dependency-updates.gradle')
+//apply from: configFile('configure-not-wanted-repositories.gradle')
+//apply from: configFile('configure-dependency-updates.gradle')
