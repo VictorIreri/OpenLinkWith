@@ -1,5 +1,9 @@
 apply from: configFile('android-library-config.gradle')
 
+android {
+    namespace 'com.tasomaniac.openwith.base'
+}
+
 dependencies {
     api project(':base-translations')
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"

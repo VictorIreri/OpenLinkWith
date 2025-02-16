@@ -14,9 +14,9 @@ android {
     applicationId 'com.tasomaniac.openwith'
     versionCode versions.versionCode
     versionName versions.versionName
+    resourceConfigurations += ['ar', 'de', 'en', 'es', 'fi', 'fr', 'hi', 'hr', 'in', 'it', 'iw', 'ja', 'ko', 'nl', 'pl', 'pt-rBR', 'pt-rPT', 'ru', 'sv', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW']
 //    buildConfigString 'GIT_SHA', gitSha
 
-    resConfigs 'ar', 'de', 'en', 'es', 'fi', 'fr', 'hi', 'hr', 'in', 'it', 'iw', 'ja', 'ko', 'nl', 'pl', 'pt-rBR', 'pt-rPT', 'ru', 'sv', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW'
   }
 
   signingConfigs {
